@@ -16,28 +16,30 @@ class Ativ{
     }
     return(n1 / n2);
     }
-    public static void exibir(){
-        
+    public static void exibir(double n1, char op, double n2, double resultado){
+        System.out.println(n1 + " " + op + " " + n2 + " = " + resultado);
     }
     public static void main(String args[]){
         Scanner ler = new Scanner(System.in);
 
-        double n1 = exibir("Escolha um número: ");
-        double n2 = exibir("Escolha outro número: ");
+        System.out.print("Escolha um número: ");
+        double n1 = ler.nextDouble();
+        System.out.print("Escolha outro número: ");
+        double n2 = ler.nextDouble();
 
         double so = somar(n1, n2);
         double su = subtrair(n1, n2);
         double mu = multiplicar(n1, n2);
         double di = dividir(n1, n2);
 
-        System.out.println(n1 + " + " + n2 + " = " + so);
-        System.out.println(n1 + " - " + n2 + " = " + su);
-        System.out.println(n1 + " * " + n2 + " = " + mu);
+        exibir(n1,'+',n2,so);
+        exibir(n1,'-',n2,su);
+        exibir(n1,'*',n2,mu);
         if(n2 == 0){
             System.out.println("Divisão impossível de ser feita");
         }
         else{
-        System.out.println(n1 + " / " + n2 + " = " + di);
+        exibir(n1,'/',n2,di);
         }
     }
 }
