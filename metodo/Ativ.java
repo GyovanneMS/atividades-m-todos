@@ -19,13 +19,17 @@ class Ativ{
     public static void exibir(double n1, char op, double n2, double resultado){
         System.out.println(n1 + " " + op + " " + n2 + " = " + resultado);
     }
+    public static double receber(String frase){
+        Scanner ler = new Scanner(System.in);
+        System.out.print(frase);
+        double numero = ler.nextDouble();
+        return numero;
+    }
     public static void main(String args[]){
         Scanner ler = new Scanner(System.in);
 
-        System.out.print("Escolha um número: ");
-        double n1 = ler.nextDouble();
-        System.out.print("Escolha outro número: ");
-        double n2 = ler.nextDouble();
+        double n1 = receber("Escolha um número: ");
+        double n2 = receber("Escolha outro número: ");
 
         double so = somar(n1, n2);
         double su = subtrair(n1, n2);
